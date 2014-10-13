@@ -38,8 +38,11 @@ popd
 
 sudo apt-get install libssl-dev unixodbc-dev unixodbc-bin unixodbc lm-sensors
 
-wget http://launchpadlibrarian.net/181018462/libhyperic-sigar-java_1.6.4+dfsg-2_amd64.deb
-sudo dpkg -i libhyperic-sigar-java_1.6.4+dfsg-2_amd64.deb
+wget http://downloads.sourceforge.net/project/sigar/sigar/1.6/hyperic-sigar-1.6.4.zip
+unzip hyperic-sigar-1.6.4.zip
+sudo install hyperic-sigar-1.6.4/sigar-bin/lib/libsigar-amd64-linux.so /usr/lib64
+sudo install hyperic-sigar-1.6.4/sigar-bin/include/*.h /usr/include/
+sudo /sbin/ldconfig -v /usr/lib64
 
 git clone https://github.com/vpedabal/ipmiutil_orcm.git
 pushd ipmiutil_orcm
