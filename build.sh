@@ -1,6 +1,7 @@
 #!/bin/bash
 set -ex
 
+dpkg-query -L libhyperic-sigar-java
 ./autogen.pl
 mkdir build
 pushd build
