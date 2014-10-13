@@ -1,4 +1,4 @@
-language: cpp
+language: c
 compiler:
     - gcc
     - clang
@@ -11,7 +11,7 @@ branches:
         - tpost-testing
 notifications:
     recipients:
-        - post.travis@gmail.com
+        - travis.post@intel.com
     email:
         on_success: change
         on_failure: always
