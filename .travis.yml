@@ -1,0 +1,24 @@
+language: cpp
+compiler:
+    - gcc
+    - clang
+before_script:
+    - ./install-dependencies.sh
+script: ./build.sh
+branches:
+    only:
+        - master
+        - tpost-testing
+notifications:
+    recipients:
+        - post.travis@gmail.com
+    email:
+        on_success: change
+        on_failure: always
+    template:
+        - "%{repository}/${branch} (%{commit} - %{author}): %{message}"
+env:
+    - PATH=/opt/autotools/bin:/opt/autotools/include:/opt/autotools/lib:/opt/autotools/share:${PATH}
+os:
+    - linux
+
