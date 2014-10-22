@@ -40,7 +40,7 @@ sudo apt-get install libssl-dev unixodbc-dev unixodbc-bin unixodbc lm-sensors
 
 wget http://downloads.sourceforge.net/project/sigar/sigar/1.6/hyperic-sigar-1.6.4.zip
 unzip hyperic-sigar-1.6.4.zip
-sudo install hyperic-sigar-1.6.4/sigar-bin/lib/*.so /usr/local/lib/
+sudo install hyperic-sigar-1.6.4/sigar-bin/lib/libsigar-amd64-linux.so /usr/local/lib/libsigar.so
 sudo install hyperic-sigar-1.6.4/sigar-bin/include/*.h /usr/include/
 sudo /sbin/ldconfig -v /usr/local/lib
 git clone https://github.com/vpedabal/ipmiutil_orcm.git
