@@ -5,7 +5,7 @@ set -ex
 mkdir build
 pushd build
 export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
-../configure --with-platform=../contrib/platform/intel/hillsboro/orcm-nightly-build
+../configure --with-platform=../contrib/platform/intel/hillsboro/orcm-nightly-build --SIGAR=/usr/local/lib
 make
 make install
 #popd
