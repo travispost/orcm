@@ -42,12 +42,12 @@ wget http://downloads.sourceforge.net/project/sigar/sigar/1.6/hyperic-sigar-1.6.
 unzip hyperic-sigar-1.6.4.zip
 sudo install hyperic-sigar-1.6.4/sigar-bin/lib/*.so /usr/local/lib/
 sudo install hyperic-sigar-1.6.4/sigar-bin/include/*.h /usr/include/
-sudo /sbin/ldconfig -v /lib/x86_64-linux-gnu
+sudo /sbin/ldconfig -v /usr/local/lib
 git clone https://github.com/vpedabal/ipmiutil_orcm.git
 pushd ipmiutil_orcm
 git checkout 6e028f17915bfbe841bd241d5832028a94c8ce78
 ./beforeconf.sh
-./configure --libdir=/usr/lib/x86_64-linux-gnu
+./configure --libdir=/usr/local/lib
 make
 sudo make install
 popd
