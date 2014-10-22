@@ -38,16 +38,25 @@ popd
 
 sudo apt-get install libssl-dev unixodbc-dev unixodbc-bin unixodbc lm-sensors
 
-wget http://downloads.sourceforge.net/project/sigar/sigar/1.6/hyperic-sigar-1.6.4.zip
-unzip hyperic-sigar-1.6.4.zip
-sudo install hyperic-sigar-1.6.4/sigar-bin/lib/libsigar-amd64-linux.so /usr/local/lib/libsigar.so
-sudo install hyperic-sigar-1.6.4/sigar-bin/include/*.h /usr/include/
-sudo /sbin/ldconfig -v /usr/local/lib
+#wget http://downloads.sourceforge.net/project/sigar/sigar/1.6/hyperic-sigar-1.6.4.zip
+#unzip hyperic-sigar-1.6.4.zip
+#sudo install hyperic-sigar-1.6.4/sigar-bin/lib/libsigar-amd64-linux.so /usr/local/lib/libsigar.so
+#sudo install hyperic-sigar-1.6.4/sigar-bin/include/*.h /usr/include/
+#sudo /sbin/ldconfig -v /usr/local/lib
+git clone https://github.com/hyperic/sigar.git
+pushd sigar
+git checkout b89060c48120d14feb2b5d8acd5612cb36db40a2
+./autogen.sh
+./configure
+make
+sudo make install
+popd
+
 git clone https://github.com/vpedabal/ipmiutil_orcm.git
 pushd ipmiutil_orcm
 git checkout 6e028f17915bfbe841bd241d5832028a94c8ce78
 ./beforeconf.sh
-./configure --libdir=/usr/local/lib
+./configure --libdir=/usr/lib/x86_64-linux-gnu
 make
 sudo make install
 popd
